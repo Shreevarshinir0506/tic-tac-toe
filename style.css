@@ -1,0 +1,156 @@
+:root {
+  --color-bg: #ffffff;
+  --color-primary: #111827;
+  --color-secondary: #6b7280;
+  --color-accent: #000000;
+  --color-accent-hover: #374151;
+  --color-card-bg: #f9fafb;
+  --color-border: #e5e7eb;
+  --color-win-bg: #d1fae5;
+  --color-win-border:oklch(53.2% 0.157 131.589);
+  --font-family: 'Poppins', sans-serif;
+  --transition-speed: 0.3s;
+  --corner-radius: 0.75rem;
+  --shadow-light: 0 1px 3px rgb(0 0 0 / 0.1);
+  --shadow-medium: 0 4px 12px rgb(0 0 0 / 0.08);
+}
+
+/* Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(180deg, oklch(55.8% 0.288 302.321) 0%, oklch(71.4% 0.203 305.504) 100%);
+  color: var(--color-primary);
+  font-family: var(--font-family);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  line-height: 1.5;
+  font-size: 18px;
+  padding: 4rem 2rem;
+  align-items: center;
+}
+
+main.container {
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 3rem;
+  text-align: center;
+  font-style: italic;
+  color: var(--color-primary);
+  margin-bottom: 0.5rem; /* Add this line or reduce it */
+}
+
+p.subtitle {
+  font-weight: 600;
+  font-size: 1.125rem;
+  color: #000000;
+  text-align: center;
+  margin-top: 0; /* Add this line to remove extra gap */
+}
+
+
+/* Game Board */
+section.board {
+  background-color: var(--color-card-bg);
+  border-radius: var(--corner-radius);
+  box-shadow: var(--shadow-medium);
+  padding: 2.5rem 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 480px;
+  width: 100%;
+}
+
+/* Game Cells */
+button.cell {
+  background-color: white;
+  border: 2px solid var(--color-border);
+  border-radius: var(--corner-radius);
+  font-size: 4rem;
+  font-weight: 700;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all var(--transition-speed) ease;
+  aspect-ratio: 1 / 1;
+  box-shadow: var(--shadow-light);
+}
+
+button.cell:hover:not(.disabled):not(.winner) {
+  background-color: var(--color-accent);
+  color: white;
+  transform: scale(1.05);
+  border-color: var(--color-accent-hover);
+  box-shadow: 0 6px 14px rgb(0 0 0 / 0.15);
+  outline-offset: 8px;
+}
+
+button.cell.disabled {
+  cursor: default;
+  color: white;
+  background-color: #000000;
+  border-color: #d1d5db;
+}
+
+button.cell.winner {
+  background-color: var(--color-win-bg);
+  border-color: var(--color-win-border);
+  color: var(--color-win-border);
+  font-weight: 900;
+  transform: scale(1.1);
+  box-shadow: 0 0 16px 4px var(--color-win-border);
+}
+
+/* Game Status */
+div.status {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--color-primary);
+}
+
+div.status.winner {
+  color: var(--color-win-border);
+}
+
+div.status.draw {
+  color: yellow;
+}
+
+/* Reset Button */
+button.reset {
+  background-color: var(--color-accent);
+  color: white;
+  border: none;
+  padding: 1.2rem 3rem;
+  font-weight: 700;
+  font-size: 1.125rem;
+  border-radius: var(--corner-radius);
+  box-shadow: 0 6px 20px rgba(0, 0, 14, 0.2);
+  cursor: pointer;
+  max-width: 480px;
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+button.reset:hover {
+  background-color: var(--color-accent-hover);
+  transform: scale(1.06);
+}
