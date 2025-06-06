@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tic Tac Toe Game</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container" role="main" aria-label="Tic Tac Toe game">
+    <h1>Tic Tac Toe</h1>
+    <p class="subtitle">Play against a friend. Click a cell to make your move.</p>
+    <section class="board" role="grid" aria-label="Tic Tac Toe board" aria-live="polite" aria-relevant="additions removals">
+      <button class="cell" role="gridcell" aria-label="Cell 1" data-index="0" tabindex="0"></button>
+      <button class="cell" role="gridcell" aria-label="Cell 2" data-index="1" tabindex="0"></button>
+      <button class="cell" role="gridcell" aria-label="Cell 3" data-index="2" tabindex="0"></button>
+      <button class="cell" role="gridcell" aria-label="Cell 4" data-index="3" tabindex="0"></button>
+      <button class="cell" role="gridcell" aria-label="Cell 5" data-index="4" tabindex="0"></button>
+      <button class="cell" role="gridcell" aria-label="Cell 6" data-index="5" tabindex="0"></button>
+      <button class="cell" role="gridcell" aria-label="Cell 7" data-index="6" tabindex="0"></button>
+      <button class="cell" role="gridcell" aria-label="Cell 8" data-index="7" tabindex="0"></button>
+      <button class="cell" role="gridcell" aria-label="Cell 9" data-index="8" tabindex="0"></button>
+    </section>
+    <div class="status" aria-live="assertive" aria-atomic="true"></div>
+    <button class="reset" aria-label="Restart game">Restart Game</button>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
